@@ -48,6 +48,8 @@ model.compile(optimizer="adam",
 
 model.fit(x_train, y_train_cat, batch_size=32, epochs=5, validation_split=0.2)
 
+model.save("nn_mnist.h5")
+
 #   Проверим НС на тестовой выборке
 model.evaluate(x_test, y_test_cat)
 
@@ -89,5 +91,4 @@ for i in range(5):
     print("Значение сети: "+str(y_test[i]))
     plt.imshow(x_false[i], cmap=plt.cm.binary)
     plt.show()
-
 
